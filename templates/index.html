@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Evaluate Your Data Breach Exposure Risk</h2>
+
+<form method="POST" action="/analyze">
+
+<label>Password Strength</label>
+<select name="password">
+    <option value="strong">Strong</option>
+    <option value="weak">Weak</option>
+</select>
+
+<label>Two-Factor Authentication</label>
+<select name="twofactor">
+    <option value="yes">Enabled</option>
+    <option value="no">Disabled</option>
+</select>
+
+<label>Number of Open Ports</label>
+<input type="number" name="ports" min="0">
+
+<label>Software Updated</label>
+<select name="update">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+</select>
+
+<label>Data Encryption</label>
+<select name="encryption">
+    <option value="yes">Enabled</option>
+    <option value="no">Disabled</option>
+</select>
+
+<button type="submit">Analyze Risk</button>
+</form>
+
+{% endblock %}

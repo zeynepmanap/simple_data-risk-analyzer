@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Your Risk Score: {{ score }}</h2>
+
+{% if score >= 60 %}
+<p class="high">⚠️ High Risk</p>
+{% elif score >= 30 %}
+<p class="medium">⚡ Medium Risk</p>
+{% else %}
+<p class="low">✅ Low Risk</p>
+{% endif %}
+
+<a href="/">Back</a>
+
+{% endblock %}
